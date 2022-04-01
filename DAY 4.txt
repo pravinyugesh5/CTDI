@@ -1,0 +1,77 @@
+1. 
+#include<iostream>
+using namespace std;
+int sum(int number){
+   if(number == 0){
+
+      return 0;
+   }
+   else{
+      if(number % 9 == 0){
+         return 9;
+      }
+      else{
+         return number % 9;
+      }
+   }
+}
+void Recursively_Prime(int number){
+   number = sum(number);
+   cout<<"Recursive sum of digits of a number is ";
+   if(number == 2 || number == 3 || number == 5 || number == 7){
+      cout << "PRIME";
+   }
+   else{
+      cout << "NOT PRIME";
+   }
+}
+int main(){
+   int number = 5555;
+   Recursively_Prime(number);
+} 
+
+
+2.  
+#include <bits/stdc++.h>
+using namespace std;
+ 
+long long int productPrimeFactors(int n)
+{
+    long long int product = 1;
+ 
+    for (int i = 2; i <= n; i++) {
+ 
+        if (n % i == 0) {
+ 
+            bool isPrime = true;
+            for (int j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+ 
+            if (isPrime) {
+                product = product * i;
+            }
+        }
+    }
+ 
+    return product;
+}
+
+5. 
+class Solution {
+  public:
+    string canJump(long long N) {
+       
+       long long c_jump=1, jump=0;
+       while(jump<N)
+        {
+            jump=jump+c_jump;
+            c_jump=jump;
+            
+        }
+
+    }
+};
